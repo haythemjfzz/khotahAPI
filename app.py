@@ -3,7 +3,8 @@ from flask_cors import CORS
 import iPlan_Sotfwar_S
 
 
-CORS(app, resources={r"/submit": {"origins": "https://iplanstudy.com"}})  # Allow only specific origin
+app = Flask(__name__)
+CORS(app)  # Enable CORS for frontend requests
 
 
 @app.route('/submit', methods=['POST'])
