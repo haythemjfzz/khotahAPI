@@ -12,7 +12,7 @@ def submit_data():
     print("Received Data:", data)  # Debugging output
 
     # Check the value of s_science_week and send data accordingly
-    if data.get("s_science_week") == "1":
+    if data.get("currentDepartment") == "s":
         response = iPlan_Sotfwar_S.process_data(data)
     
     else:
