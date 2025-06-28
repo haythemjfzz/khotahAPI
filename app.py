@@ -14,6 +14,8 @@ def submit_data():
     # Check the value of s_science_week and send data accordingly
     if data.get("department") == "S":
         response = iPlan_Sotfwar_S.process_data(data)
+    elif data.get("department") == "G":
+        response = iPlan_Sotfwar_G.process_data(data)
     
     else:
         response = {"error": "Invalid s_science_week value"}
