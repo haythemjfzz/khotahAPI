@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import iPlan_Sotfwar_S
 import iPlan_Sotfwar_G
+import iPlan_Sotfwar_MTGP
 
 
 app = Flask(__name__)
@@ -17,6 +18,8 @@ def submit_data():
         response = iPlan_Sotfwar_S.process_data(data)
     elif data.get("department") == "GESTION":
         response = iPlan_Sotfwar_G.process_data(data)
+    elif data.get("department") == "P":
+        response = iPlan_Sotfwar_MTGP.process_data(data)
     
     else:
         response = {"error": "Invalid s_science_week value"}
@@ -35,4 +38,5 @@ if __name__ == '__main__':
 @app.route('/ping')
 def ping():
     return "pong", 200
+
 
